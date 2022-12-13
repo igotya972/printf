@@ -6,7 +6,7 @@
 /*   By: dferjul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:55:30 by dferjul           #+#    #+#             */
-/*   Updated: 2022/12/11 02:20:30 by dferjul          ###   ########.fr       */
+/*   Updated: 2022/12/13 17:29:43 by dferjul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,13 @@ int	ft_flags(va_list args, char flags)
 	if (flags == 'i')
 		return (ft_putnbr(va_args(args, int)));
 	if (flags == 'u')
-		return (ft_putnbr_unsint(va_args(args, unsigned int)));
+		ft_putnbr_unsint(va_args(args, unsigned int));
 	if (flags == 'x')
-		return (ft_putnbr_unsint(va_args(args, unsigned int)));
+		return (ft_conv(va_args(args, unsigned int), "0123456789abcdef", 0));
+	if (flags == 'X')
+		return ft_putconv(va_args(args, unsigned int), "0123456789ABCDEF", 0);
 	if (flags == 'c')
-		return (ft_putchar(va_args(args, int)));
-	
+		return (ft_putchar(va_args(args, char)));
+	if (flags == 'p')
+		return
 }

@@ -6,7 +6,7 @@
 /*   By: dferjul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:37:16 by dferjul           #+#    #+#             */
-/*   Updated: 2022/12/11 02:20:27 by dferjul          ###   ########.fr       */
+/*   Updated: 2022/12/13 17:29:39 by dferjul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,31 @@ int	ft_putnbr_unsint(unsigned int nb, char *s)
 	else
 	{
 		ft_putnbr(nb / 16);
-		ft_putnbr(nb % 10);
+		ft_putnbr(nb % 16);
 	}
 	return (i);
+}
+
+int	ft_putconv(unsigned int p, char *s)
+{
+	int	len;
+
+	len = 0;
+	if (p > 15)
+	{
+		ft_putconv(p / 16, s);
+		len++;
+		ft_putchar(s[p]);
+	}
+	else
+	{
+		len++;
+		ft_putchar(s[p]);
+	}
+	return (len);
+}
+
+int	main()
+{
+	printf("%d", libftprintf());
 }
