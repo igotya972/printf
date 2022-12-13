@@ -29,12 +29,9 @@ int ft_printf(const char *, ...)
 			i++;
 		}
 		else 
+			{
 			ft_putchar(c);
 			i++;
+			}
 	}
-}
-
-void	ft_flags()
-{
-
 }

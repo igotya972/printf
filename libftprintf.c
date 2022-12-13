@@ -38,8 +38,3 @@ int ft_printf(const char *, ...)
 			i++;
 	}
 }
-
-void	ft_flags()
-{
-
-}
