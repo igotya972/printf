@@ -6,11 +6,12 @@
 /*   By: dferjul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:11:15 by dferjul           #+#    #+#             */
-/*   Updated: 2022/12/14 15:48:44 by dferjul          ###   ########.fr       */
+/*   Updated: 2022/12/16 17:02:17 by dferjul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libftprintf.h"
 
 int ft_printf(const char *format, ...)
 {
@@ -21,19 +22,21 @@ int ft_printf(const char *format, ...)
 
 	i = 0;
 	len = 0;
-	va_start(args, str);
-	while (format[i++])
+	va_start(args, format);
+	while (format[i])
 	{
-		if (str[i] == '%' && ft_strchr("cspdiuxX%", format[i + 1]))
+		if (format[i] == '%' && ft_strchr("cspdiuxX%", format[i + 1]))
 		{
-			len += ft_printf_arg(format, i, args);
-			i++;
+			len += ft_flags(args, format[i + 1]);
+			i += 2;
 		}
 		else 
 		{
 			ft_putchar(c);
 			i++;
+			len++;
 		}
 	}
+	va_end(args);
 	return (len);
 }

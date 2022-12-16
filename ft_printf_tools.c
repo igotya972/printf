@@ -6,7 +6,7 @@
 /*   By: dferjul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:37:16 by dferjul           #+#    #+#             */
-/*   Updated: 2022/12/13 17:29:39 by dferjul          ###   ########.fr       */
+/*   Updated: 2022/12/16 16:31:45 by dferjul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,26 @@ int	ft_putconv(unsigned int p, char *s)
 	return (len);
 }
 
-int	main()
+int	ft_putlong(unsigned long long nb, int len, char *base)
 {
-	printf("%d", libftprintf());
+	unsigned long long n;
+
+	n = nb;
+	len = 2;
+	write (1, "0x", 1);
+	if (nb == 0)
+		len++;
+	if (nb > 15)
+	{
+		ft_putlong(nb / 16, len, base);
+		ft_putchar(base[nb % 16]);
+	}
+	else
+		ft_putchar(base[nb % 16]);
+	while (n != 0)
+	{
+		n = n / 16;
+		len++;
+	}
+	return (len);
 }

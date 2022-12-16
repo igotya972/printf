@@ -6,17 +6,15 @@
 #    By: dferjul <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 13:05:12 by dferjul           #+#    #+#              #
-#    Updated: 2022/12/16 13:12:58 by dferjul          ###   ########.fr        #
+#    Updated: 2022/12/16 17:07:22 by dferjul          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-
 
 SRCS	=	ft_flags.c \
 		ft_printf.c \
 		ft_printf_tools.c \
 
-OBJS	=	$(SRCS: c=.o)
+OBJS	=	$(SRCS:.c=.o)
 
 CC	=	gcc
 
@@ -41,5 +39,5 @@ fclean : clean
 
 re : fclean all
 
-.PHONE : all libftprintf.a clean fclan re
+.PHONE : all libftprintf.a clean fclean re
 

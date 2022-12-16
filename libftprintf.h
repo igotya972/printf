@@ -6,7 +6,7 @@
 /*   By: dferjul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:07:50 by dferjul           #+#    #+#             */
-/*   Updated: 2022/12/16 13:17:28 by dferjul          ###   ########.fr       */
+/*   Updated: 2022/12/16 16:36:24 by dferjul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int	ft_putstr(char *str);
 int	ft_putnbr(int nb);
 int	ft_putnbr_unsint(unsigned int nb, char *s);
 int	ft_putconv(unsigned int p, char *s);
-
+int	ft_putlong(unsigned long long nb, int len, char *base);
  
 #endif
