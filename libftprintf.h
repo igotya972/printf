@@ -6,7 +6,7 @@
 /*   By: dferjul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:07:50 by dferjul           #+#    #+#             */
-/*   Updated: 2022/12/07 16:12:13 by dferjul          ###   ########.fr       */
+/*   Updated: 2022/12/16 13:17:28 by dferjul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,16 @@
 # define LIBFTPRINTF_H
 # include <unistd.h>
 # include <string.h>
+# include <stdlib.h>
+# include <stdio.h>
 
+int	ft_flags(va_list args, char flags);
+int	ft_printf(const char *format, ...);
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_putnbr(int nb);
+int	ft_putnbr_unsint(unsigned int nb, char *s);
+int	ft_putconv(unsigned int p, char *s);
 
  
 #endif

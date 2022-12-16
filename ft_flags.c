@@ -6,7 +6,7 @@
 /*   By: dferjul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:55:30 by dferjul           #+#    #+#             */
-/*   Updated: 2022/12/13 17:29:43 by dferjul          ###   ########.fr       */
+/*   Updated: 2022/12/14 15:48:47 by dferjul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ int	ft_flags(va_list args, char flags)
 	if (flags == 'c')
 		return (ft_putchar(va_args(args, char)));
 	if (flags == 'p')
+		return (...(va_args(args, unsigned long)));
 		return
 }
