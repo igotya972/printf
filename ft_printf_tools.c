@@ -6,44 +6,23 @@
 /*   By: dferjul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:37:16 by dferjul           #+#    #+#             */
-/*   Updated: 2022/12/16 16:31:45 by dferjul          ###   ########.fr       */
+/*   Updated: 2022/12/17 15:06:37 by dferjul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "libftprintf.h"
-
-int	ft_putchar(char c)
-{
-	write (1, &c, 1);
-	return (1);
-}
-
-int	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	return (i);
-}
 
 int	ft_putnbr(int nb)
 {
 	int	i;
-	char	*str;
 
 	i = 0;
-	while (str[i])
+	while (nb)
 		i++;
 	if (nb == -2147483648)
 	{
 		write(1, "-2147483648", 11);
-		return ;
+		return (11);
 	}
 	else if (nb < 0)
 	{
@@ -57,15 +36,15 @@ int	ft_putnbr(int nb)
 		ft_putnbr(nb / 10);
 		ft_putnbr(nb % 10);
 	}
-	return (i)
+	return (i);
 }
 
-int	ft_putnbr_unsint(unsigned int nb, char *s)
+int	ft_putnbr_unsint(unsigned int nb)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (s[i])
+	while (nb != 0)
 		i++;
 	if (nb < 9)
 	{
@@ -98,9 +77,10 @@ int	ft_putconv(unsigned int p, char *s)
 	return (len);
 }
 
-int	ft_putlong(unsigned long long nb, int len, char *base)
+int	ft_pl(unsigned long long nb, char *base)
 {
-	unsigned long long n;
+	int			len;
+	unsigned long long	n;
 
 	n = nb;
 	len = 2;
@@ -109,7 +89,7 @@ int	ft_putlong(unsigned long long nb, int len, char *base)
 		len++;
 	if (nb > 15)
 	{
-		ft_putlong(nb / 16, len, base);
+		ft_putlong(nb / 16, base);
 		ft_putchar(base[nb % 16]);
 	}
 	else

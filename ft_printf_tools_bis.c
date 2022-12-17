@@ -1,40 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_tools_bis.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dferjul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 12:11:15 by dferjul           #+#    #+#             */
-/*   Updated: 2022/12/17 15:03:46 by dferjul          ###   ########.fr       */
+/*   Created: 2022/12/16 23:31:51 by dferjul           #+#    #+#             */
+/*   Updated: 2022/12/17 14:55:16 by dferjul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_printf(const char *format, ...)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
-	int	len;
-	va_list	args;
 
 	i = 0;
-	len = 0;
-	va_start(args, format);
-	while (format[i])
+	while (s[i])
 	{
-		if (format[i] == '%' && ft_strchr("cspdiuxX%", format[i + 1]))
-		{
-			len += ft_flags(args, format[i + 1]);
-			i += 2;
-		}
-		else
-		{
-			ft_putchar(format[i]);
-			i++;
-			len++;
-		}
+		if ((char)c == s[i])
+			return ((char *)s + i);
+		i++;
 	}
-	va_end(args);
-	return (len);
+	if ((char)c == 0)
+		return ((char *)s + i);
+	return (0);
+}
+
+int	ft_putchar(char c)
+{
+	write (1, &c, 1);
+	return (1);
+}
+
+int	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
 }
