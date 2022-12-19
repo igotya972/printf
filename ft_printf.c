@@ -6,7 +6,7 @@
 /*   By: dferjul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:11:15 by dferjul           #+#    #+#             */
-/*   Updated: 2022/12/17 15:03:46 by dferjul          ###   ########.fr       */
+/*   Updated: 2022/12/19 11:11:36 by dferjul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_printf(const char *format, ...)
 {
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 	va_list	args;
 
 	i = 0;
@@ -38,3 +38,10 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (len);
 }
+
+/*
+int main(void)
+{
+	printf("%d", ft_printf("%u", 42));
+}
+*/

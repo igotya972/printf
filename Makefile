@@ -6,7 +6,7 @@
 #    By: dferjul <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 13:05:12 by dferjul           #+#    #+#              #
-#    Updated: 2022/12/17 00:23:43 by dferjul          ###   ########.fr        #
+#    Updated: 2022/12/19 11:10:25 by dferjul          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,4 +41,3 @@ fclean : clean
 re : fclean all
 
 .PHONE : all libftprintf.a clean fclean re
-
