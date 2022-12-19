@@ -6,7 +6,7 @@
 /*   By: dferjul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:37:16 by dferjul           #+#    #+#             */
-/*   Updated: 2022/12/19 11:58:46 by dferjul          ###   ########.fr       */
+/*   Updated: 2022/12/19 18:19:18 by dferjul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	ft_putnbr(int nb)
 		{
 			nb = -nb;
 			i += ft_putchar('-');
-			
 		}
 		if (nb < 10)
 			i += ft_putchar(nb + 48);
@@ -46,14 +45,14 @@ int	ft_putnbr_unsint(unsigned int nb)
 	int	i;
 
 	i = 0;
-	if(nb >= 10)
+	if (nb >= 10)
 	{
 		i += ft_putnbr_unsint(nb / 10);
 		i += ft_putnbr_unsint(nb % 10);
 	}
 	else
 		i += ft_putchar(nb + '0');
-	return(i);
+	return (i);
 }
 
 int	ft_putconv(unsigned int p, char *s)
@@ -70,12 +69,6 @@ int	ft_putconv(unsigned int p, char *s)
 		len += ft_putchar(s[p]);
 	return (len);
 }
-
-/*int main()
-{
-	ft_printf("%x\n", -10);
-	printf("%x", -10);
-}*/
 
 void	ft_pl(unsigned long long nb, char *base, int *len)
 {
