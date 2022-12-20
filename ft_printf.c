@@ -6,7 +6,7 @@
 /*   By: dferjul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:11:15 by dferjul           #+#    #+#             */
-/*   Updated: 2022/12/19 18:15:32 by dferjul          ###   ########.fr       */
+/*   Updated: 2022/12/20 11:58:03 by dferjul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i])
 	{
-		if (format[i] == '%' && ft_strchr("cspdiuxX%", format[i + 1]))
+		if (format[i] == '%')
 		{
 			len += ft_flags(args, format[i + 1]);
 			i += 2;
